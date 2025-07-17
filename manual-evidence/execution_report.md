@@ -46,15 +46,15 @@
 
 | TC-004 | Remove Item from Cart | Medium | PASS |  |  |
 
-| TC-005 | Complete Checkout Happy Path | High | N/R |  |  |
+| TC-005 | Complete Checkout Happy Path | High | PASS |  |  |
 
-| TC-006 | Checkout Missing Zip Validation | Medium | N/R |  |  |
+| TC-006 | Checkout Missing Zip Validation | Medium | PASS |  |  |
 
-| TC-007 | Sort Products Price Low→High | Low | N/R |  |  |
+| TC-007 | Sort Products Price Low→High | Low | PASS |  |  |
 
-| TC-008 | Logout Ends Session | Medium | N/R |  |  |
+| TC-008 | Logout Ends Session | Medium | PASS |  |  |
 
-| TC-009 | Session Cleared on Cookie Delete | Low | N/R |  |  |
+| TC-009 | Session Cleared on Cookie Delete | Low | PASS |  |  |
 
 | TC-010 | Inventory Images Load (Fast 3G) | Low | N/R |  |  |
 
