@@ -38,13 +38,13 @@
 
 |------|-------|----------|--------|-----------|-------|
 
-| TC-001 | Valid Login (standard\_user) | High | N/R |  |  |
+| TC-001 | Valid Login (standard\_user) | High | PASS |  |  |
 
-| TC-002 | Locked-Out User Blocked on Login | High | N/R |  |  |
+| TC-002 | Locked-Out User Blocked on Login | High | PASS |  |  |
 
-| TC-003 | Add Single Item to Cart | High | N/R |  |  |
+| TC-003 | Add Single Item to Cart | High | PASS |  |  |
 
-| TC-004 | Remove Item from Cart | Medium | N/R |  |  |
+| TC-004 | Remove Item from Cart | Medium | PASS |  |  |
 
 | TC-005 | Complete Checkout Happy Path | High | N/R |  |  |
 
