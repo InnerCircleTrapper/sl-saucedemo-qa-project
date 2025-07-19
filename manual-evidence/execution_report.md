@@ -236,6 +236,35 @@
 
 \*\*Priority:\*\* Low
 
+#### TC-010 – Inventory Product Images Load (3G) – EXECUTION
+
+**Date/Time:** 2025-07-18 16:45 EDT  
+**Browser:** Brave/Chrome <version> (desktop)  
+**Network Throttle:** 3G (built-in)  
+**Cache:** Disabled (DevTools)  
+**Service Worker:** Bypass ON  
+**Procedure Notes:** Hard reload (Ctrl+Shift+R) → immediate full-page scroll → DOM-driven performance timing snippet (responseEnd).  
+**Images Detected:** 6 / 6 (DOM images = 6, network-backed = 6)  
+
+| Image (file) | Finish ms | Duration ms | Notes |
+|--------------|-----------|-------------|-------|
+| bike-light … | 13035 | 4489 |  |
+| bolt-shirt … | 13602 | 5098 |  |
+| red-onesie … | 13917 | 5424 |  |
+| sauce-backpack … | 14082 | 5536 |  |
+| test-allthethings … | 14782 | 6235 |  |
+| sauce-pullover (fleece) … | 15293 | 6746 | **Slowest** |
+
+**Max finish (responseEnd):** 15,293 ms  
+**Threshold:** ≤ 10,000 ms  
+**Result:** **FAIL**  
+
+**Console Notes:** Only slow-network font fallback warnings + analytics 401; no JS errors affecting images.  
+**Root Cause (suspected):** Large 1200×1500 JPEG thumbnails (no smaller responsive variant or modern format); all full-res images fetched early on slow network → exceeds 10 s budget.  
+**Next Action:** Defect *IMG-PERF-001* opened (optimize product thumbnails, consider srcset/WebP/AVIF, compression).  
+**Evidence:** `/artifacts/TC-010/console_timing_screenshot.png`, `/artifacts/TC-010/perf_snippet_output.txt` (maxFinish 15293).  
+**Notes:** Earlier attempts invalid (only 5 images captured) due to late scroll; resolved with DOM-driven enumeration.
+
 
 
 \### TC-011 – Keyboard Tab Navigation Accessible
