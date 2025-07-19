@@ -56,7 +56,7 @@
 
 | TC-009 | Session Cleared on Cookie Delete | Low | PASS |  |  |
 
-| TC-010 | Inventory Images Load (Fast 3G) | Low | N/R |  |  |
+| TC-010 | Inventory Images Load (Fast 3G) | Low | FAIL |  |  |
 
 | TC-011 | Keyboard Tab Navigation Accessible | Low | N/R |  |  |
 
