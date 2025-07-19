@@ -239,7 +239,7 @@
 #### TC-010 – Inventory Product Images Load (3G) – EXECUTION
 
 **Date/Time:** 2025-07-18 16:45 EDT  
-**Browser:** Chrome 124.0.x (desktop) *(add Brave version separately if you ran both)*  
+**Browser:** Chrome 124.0.x (desktop) 
 **Network Throttle:** 3G (built-in DevTools preset)  
 **Cache:** Disabled (DevTools)  
 **Service Worker:** Bypass ON  
