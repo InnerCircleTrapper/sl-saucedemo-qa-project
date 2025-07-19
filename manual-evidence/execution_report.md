@@ -56,7 +56,7 @@
 
 | TC-009 | Session Cleared on Cookie Delete | Low | PASS |  |  |
 
-| TC-010 | Inventory Images Load (Fast 3G) | Low | N/R |  |  |
+| TC-010 | Inventory Images Load (Fast 3G) | Low | FAIL |  |  |
 
 | TC-011 | Keyboard Tab Navigation Accessible | Low | N/R |  |  |
 
@@ -236,6 +236,34 @@
 
 \*\*Priority:\*\* Low
 
+#### TC-010 – Inventory Product Images Load (3G) – EXECUTION
+
+**Date/Time:** 2025-07-18 16:45 EDT  
+**Browser:** Chrome 124.0.x (desktop) *(add Brave version separately if you ran both)*  
+**Network Throttle:** 3G (built-in DevTools preset)  
+**Cache:** Disabled (DevTools)  
+**Service Worker:** Bypass ON  
+**Procedure Notes:** Hard reload (Ctrl+Shift+R) → immediate full-page scroll → DOM-driven performance timing snippet (`responseEnd`).  
+**Images Detected:** 6 / 6 (DOM images = 6, network-backed = 6)  
+
+| Image Filename (base) | Finish (ms) | Duration (ms) | Notes |
+|-----------------------|-------------|---------------|-------|
+| bike-light-1200x1500.37c843b0.jpg | 13035 | 4489 |  |
+| bolt-shirt-1200x1500.c2599ac5.jpg | 13602 | 5098 |  |
+| red-onesie-1200x1500.2ec615b2.jpg | 13917 | 5424 |  |
+| sauce-backpack-1200x1500.0a0b85a3.jpg | 14082 | 5536 |  |
+| test.allthethings()-t-shirt-1200x1500.30dae4ef.jpg | 14782 | 6235 |  |
+| sauce-pullover-1200x1500.51d7ffa9.jpg | 15293 | 6746 | **Slowest** |
+
+**Max finish (responseEnd):** 15,293 ms  
+**Threshold:** ≤ 10,000 ms  
+**Result:** **FAIL**  
+
+**Console Notes:** Only slow-network font fallback warnings + analytics 401 responses; no JS errors affecting image rendering.  
+**Suspected Root Cause:** Large 1200×1500 JPEG thumbnails (no responsive `srcset` or modern formats) → high transfer times on 3G.  
+**Next Action:** Defect *IMG-PERF-001* opened (optimize thumbnails: smaller derivative, WebP/AVIF, compression, `srcset`).  
+**Evidence:** [Console timing screenshot](manual-evidence/screenshots/TC-010_console-timing_FAIL_20250718-1645.png) • (Raw console output saved as `manual-evidence/screenshots/TC-010_perf-output_FAIL_20250718-1645.txt`)  
+**Notes:** Earlier runs invalid (only 5 images) due to below-the-fold image not requested before timing; resolved via immediate scroll + DOM/perf join approach.
 
 
 \### TC-011 – Keyboard Tab Navigation Accessible
@@ -298,5 +326,5 @@
 
 \*\*Expected:\*\* Performance score ≥ 90 (record actual); attach JSON/HTML report.
 
-
+manual-evidence\screenshots\TC-010_console-timing_FAIL_20250718-1645.png
 
