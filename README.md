@@ -1,5 +1,12 @@
 \# SauceDemo QA \& Test Engineering Project
 
+<p align="center">
+  <img src="assets/og-banner.png"
+       alt="SauceDemo QA & Test Engineering Project – manual, performance, accessibility (pending)"
+       width="100%">
+</p>
+
+
 
 
 Manual + (planned) automation test assets for the \[Sauce Demo](https://www.saucedemo.com/) sample e‑commerce site.  
