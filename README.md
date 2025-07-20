@@ -22,9 +22,9 @@ Manual + (planned) automation test assets for the \[Sauce Demo](https://www.sauc
 | Area | Included | Notes |
 |------|----------|-------|
 | Functional (Desktop) | ✅ | Login, inventory listing, cart add/remove, checkout steps, sorting, logout, session clearing |
-| Performance | ✅ | TC-010 image load timing (3G baseline captured) |
-| Accessibility (Keyboard) | 🟡 (planned) | TC-011 defined (keyboard navigation) **not yet executed** |
-| Mobile (Smoke) | ✅ | Add-to-cart flow on Galaxy S22 (BrowserStack) |
+| Performance | ✅ (executed) | **TC-010 FAIL** – max image finish 15,293 ms (>10,000 ms threshold) (IMG-PERF-001) |
+| Accessibility (Keyboard) | ✅ (executed) | **TC-011 FAIL** – missing visible focus indicator (ACC-FOCUS-001) |
+| Mobile (Smoke) | 🟡 (planned) | Add-to-cart flow defined – not yet executed |
 | Negative / Validation | 🟡 | Basic invalid creds & form field cases; more planned |
 | Automation | 🟡 (planned) | Selenium + pytest scaffold upcoming |
 | Performance Optimization | 🟡 | Remediation tasks pending (IMG-PERF-001) |
@@ -35,12 +35,13 @@ Manual + (planned) automation test assets for the \[Sauce Demo](https://www.sauc
 
 - **Total Test Cases Defined:** 14  
 - **Executed This Cycle:** 10  
-- **Pass:** 9  
-- **Fail:** 1 (Performance – TC-010)  
-- **Not Yet Executed:** 4 (includes TC-011 accessibility)  
-- **Open Defects:** 1 (`IMG-PERF-001`)  
+- **Pass:** 8  
+- **Fail:** 2 (Performance – TC-010; Accessibility – TC-011)  
+- **Not Yet Executed:** 4 (includes Mobile smoke test)  
+- **Open Defects:** 2 (`IMG-PERF-001`, `ACC-FOCUS-001`)  
 - **Performance Baseline (TC-010 Max Image Finish):** 15,293 ms (Threshold ≤ 10,000 ms)  
-- **Accessibility Baseline:** _Pending – TC-011 not executed_
+- **Accessibility Baseline (TC-011):** FAIL – missing visible focus indicator (ACC-FOCUS-001)
+
 
 > _Legend:_ ✅ Implemented • 🟡 Partial / In Progress • ❌ Not in current scope
 
