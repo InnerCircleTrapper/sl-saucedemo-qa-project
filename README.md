@@ -34,14 +34,13 @@ Manual + (planned) automation test assets for the \[Sauce Demo](https://www.sauc
 ### Current Metrics
 
 - **Total Test Cases Defined:** 14  
-- **Executed This Cycle:** 10  
-- **Pass:** 8  
+- **Executed This Cycle:** 11  
+- **Pass:** 9  
 - **Fail:** 2 (Performance – TC-010; Accessibility – TC-011)  
-- **Not Yet Executed:** 4 (includes Mobile smoke test)  
+- **Not Yet Executed:** 3  
 - **Open Defects:** 2 (`IMG-PERF-001`, `ACC-FOCUS-001`)  
 - **Performance Baseline (TC-010 Max Image Finish):** 15,293 ms (Threshold ≤ 10,000 ms)  
 - **Accessibility Baseline (TC-011):** FAIL – missing visible focus indicator (ACC-FOCUS-001)
-
 
 > _Legend:_ ✅ Implemented • 🟡 Partial / In Progress • ❌ Not in current scope
 
