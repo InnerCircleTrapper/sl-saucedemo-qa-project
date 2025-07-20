@@ -36,3 +36,19 @@ Manual + (planned) automation test assets for the \[Sauce Demo](https://www.sauc
 - **Accessibility Baseline:** _Pending – TC-011 not executed_
 
 > _Legend:_ ✅ Implemented • 🟡 Partial / In Progress • ❌ Not in current scope
+
+## Repository Structure
+
+> *Evolving layout – currently definitions & executions are combined; will be split for maintainability.*
+
+```text
+.
+├── manual-evidence/
+│   ├── execution_report.md      # Test case executions + evidence links (includes TC-010 fail)
+│   └── screenshots/             # PNG evidence assets
+├── assets/                      # Social preview / icons (e.g., og-banner.png)
+├── env/                         # (Planned) Environment & tooling notes (browser versions, network profiles)
+├── test-cases/                  # (Planned) Individual static TC definition files (TC-001.md etc.)
+├── automation/                  # (Planned) Selenium / pytest (or Playwright) smoke tests
+├── defects/                     # (Planned) Markdown defect records (one per issue) or ISSUE_TEMPLATE
+└── README.md
