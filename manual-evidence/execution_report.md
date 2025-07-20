@@ -58,7 +58,7 @@
 
 | TC-010 | Inventory Images Load (Fast 3G) | Low | FAIL |  |  |
 
-| TC-011 | Keyboard Tab Navigation Accessible | Low | N/R |  |  |
+| TC-011 | Keyboard Tab Navigation Accessible | Low | FAIL |  |  |
 
 | TC-012 | Error Banner Can Be Dismissed | Low | N/R |  |  |
 
@@ -280,7 +280,19 @@
 
 \*\*Priority:\*\* Low
 
+### TC-011 – Keyboard Accessibility (Tab Navigation)
 
+**Executed:** 2025-07-19 23:05 EDT  
+**Browser:** Chrome 125 (desktop)  
+**Environment:** Windows 11, 100% zoom, no interfering extensions  
+**Preconditions:** Logged in; inventory page at top; no modal overlays.  
+**Steps:** Press `Tab` sequentially from top of page through footer; observe each focus movement. Press `Shift+Tab` to reverse order.  
+**Expected:** Every focusable element appears exactly once in logical sequence with a visible focus indicator (outline/ring/underline change); no element gains “invisible” focus.  
+**Actual:** Footer social icon link(s) receive focus but show **no visible focus indicator** (computed style shows `outline: none`). (Add any other elements if affected.)  
+**Result:** **FAIL**  
+**Evidence:** `manual-evidence/screenshots/TC-011_focus-indicator_FAIL_20250719-2305.png`  
+**Defect:** `ACC-FOCUS-001` (open / to be opened)  
+**Notes:** Likely global CSS rule removing default outline without a :focus-visible replacement. Retest after adding custom outline style.
 
 \### TC-012 – Error Banner Can Be Dismissed
 
