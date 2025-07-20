@@ -18,49 +18,36 @@
 
 
 
-\## Run Summary (update after execution)
+## Run Summary (2025-07-19)
+
+| Total Cases | Executed | Passed | Failed | Blocked | Not Run | Pass % (Executed) |
+|-------------|----------|--------|--------|---------|---------|-------------------|
+| 14          | 11       | 9      | 2      | 0       | 3       | 81.8%             |
+
+**Executed Through:** TC-011  
+**Fails:** TC-010 (Performance – IMG-PERF-001), TC-011 (Accessibility – ACC-FOCUS-001)  
+**Not Run:** TC-012, TC-013, TC-014  
+> Pass % = Passed ÷ (Passed + Failed) = 9 ÷ 11 ≈ 81.8%
 
 
+## Detailed Results
 
-| Total Cases | Passed | Failed | Blocked | Not Run | Pass % |
-
-|-------------|--------|--------|---------|---------|--------|
-
-| 12 | 0 | 0 | 0 | 12 | 0% |
-
-
-
-\## Detailed Results
-
-
-
-| TC ID | Title | Priority | Result | Defect ID | Notes |
-
-|------|-------|----------|--------|-----------|-------|
-
-| TC-001 | Valid Login (standard\_user) | High | PASS |  |  |
-
-| TC-002 | Locked-Out User Blocked on Login | High | PASS |  |  |
-
-| TC-003 | Add Single Item to Cart | High | PASS |  |  |
-
-| TC-004 | Remove Item from Cart | Medium | PASS |  |  |
-
-| TC-005 | Complete Checkout Happy Path | High | PASS |  |  |
-
-| TC-006 | Checkout Missing Zip Validation | Medium | PASS |  |  |
-
-| TC-007 | Sort Products Price Low→High | Low | PASS |  |  |
-
-| TC-008 | Logout Ends Session | Medium | PASS |  |  |
-
-| TC-009 | Session Cleared on Cookie Delete | Low | PASS |  |  |
-
-| TC-010 | Inventory Images Load (Fast 3G) | Low | FAIL |  |  |
-
-| TC-011 | Keyboard Tab Navigation Accessible | Low | FAIL |  |  |
-
-| TC-012 | Error Banner Can Be Dismissed | Low | N/R |  |  |
+| TC ID  | Title                                   | Priority | Result | Defect ID        | Notes |
+|--------|-----------------------------------------|----------|--------|------------------|-------|
+| TC-001 | Valid Login (standard_user)             | High     | PASS   |                  |       |
+| TC-002 | Locked-Out User Blocked on Login        | High     | PASS   |                  |       |
+| TC-003 | Add Single Item to Cart                 | High     | PASS   |                  |       |
+| TC-004 | Remove Item from Cart                   | Medium   | PASS   |                  |       |
+| TC-005 | Complete Checkout Happy Path            | High     | PASS   |                  |       |
+| TC-006 | Checkout Missing Zip Validation         | Medium   | PASS   |                  |       |
+| TC-007 | Sort Products Price Low→High            | Low      | PASS   |                  |       |
+| TC-008 | Logout Ends Session                     | Medium   | PASS   |                  |       |
+| TC-009 | Session Cleared on Cookie Delete        | Low      | PASS   |                  |       |
+| TC-010 | Inventory Images Load (Fast 3G)         | Low      | FAIL   | IMG-PERF-001     | Max image finish 15,293 ms > 10,000 ms threshold |
+| TC-011 | Keyboard Tab Navigation Accessible      | Low      | FAIL   | ACC-FOCUS-001    | Missing visible focus indicator footer links |
+| TC-012 | Error Banner Can Be Dismissed           | Low      | N/R    |                  | Planned; not executed this cycle |
+| TC-013 | Mobile Add-to-Cart Smoke (Galaxy S22) * | Medium?  | N/R    |                  | Placeholder definition; not executed |
+| TC-014 | Lighthouse Performance Baseline *       | Low      | N/R    |                  | Planned automated perf baseline |
 
 
 
