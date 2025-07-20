@@ -33,7 +33,6 @@ Manual + (planned) automation test assets for the \[Sauce Demo](https://www.sauc
 
 ### Current Metrics
 
-- **Total Test Cases Defined:** 14  
 - **Executed This Cycle:** 11  
 - **Pass:** 9  
 - **Fail:** 2 (Performance – TC-010; Accessibility – TC-011)  
