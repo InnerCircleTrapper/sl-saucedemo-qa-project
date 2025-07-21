@@ -33,9 +33,10 @@
 ## Detailed Results
 
 | TC ID  |Result| Defect ID        | Notes |
-| TC‑010 | FAIL | [IMG‑PERF‑001](../../issues/11) |  |
-| TC‑011 | FAIL | [ACC‑FOCUS‑001](../../issues/12) |  |
-| TC‑014 | FAIL | [PERF‑LH‑BASE‑001](../../issues/13) | Inventory score 73 |
+| TC-010 | Inventory Images Load (Fast 3G) | Low | FAIL | [IMG‑PERF‑001](../issues/11) | Max image finish 15 293 ms |
+| TC-011 | Keyboard Tab Navigation Accessible | Low | FAIL | [ACC‑FOCUS‑001](../issues/12) | No visible focus ring |
+| TC-014 | Lighthouse Performance Baseline | Low | FAIL | [PERF‑LH‑BASE‑001](../issues/13) | Inventory score 73 |
+
 
 | TC-001 | Valid Login (standard_user)             | High     | PASS   |                  |       |
 | TC-002 | Locked-Out User Blocked on Login        | High     | PASS   |                  |       |
@@ -46,11 +47,11 @@
 | TC-007 | Sort Products Price Low→High            | Low      | PASS   |                  |       |
 | TC-008 | Logout Ends Session                     | Medium   | PASS   |                  |       |
 | TC-009 | Session Cleared on Cookie Delete        | Low      | PASS   |                  |       |
-| TC-010 | Inventory Images Load (Fast 3G)         | Low      | FAIL   | IMG-PERF-001     | Max image finish 15,293 ms > 10,000 ms threshold |
-| TC-011 | Keyboard Tab Navigation Accessible      | Low      | FAIL   | ACC-FOCUS-001    | Missing visible focus indicator footer links |
+| TC-010 | Inventory Images Load (Fast 3G)         | Low      | FAIL   |  [IMG‑PERF‑001](../issues/11)     | Max image finish 15,293 ms > 10,000 ms threshold |
+| TC-011 | Keyboard Tab Navigation Accessible      | Low      | FAIL   | [ACC‑FOCUS‑001](../issues/12)    | Missing visible focus indicator footer links |
 | TC-012 | Error Banner Can Be Dismissed           | Low      | PASS   |                  | Banner closed; icons cleared |
 | TC-013 | Mobile Add-to-Cart Smoke (Galaxy S22)   | Medium?  | PASS   |                  | Scroll down bit laggy |
-| TC-014 | Lighthouse Performance Baseline         | Low      | FAIL   |                  | Planned automated perf baseline |
+| TC-014 | Lighthouse Performance Baseline         | Low      | FAIL   |                  [PERF‑LH‑BASE‑001](../issues/13)| Planned automated perf baseline |
 | TC-015 | Automation Smoke Script (pytest) | Low | N/R | | Framework task |
 
 
