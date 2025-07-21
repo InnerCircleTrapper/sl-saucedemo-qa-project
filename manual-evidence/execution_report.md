@@ -18,22 +18,25 @@
 
 
 
-## Run Summary (2025-07-19)
+## Run Summary (2025‑07‑20)
 
-| Total Cases | Executed | Passed | Failed | Blocked | Not Run | Pass % (Executed) |
+| Total Cases | Executed | Passed | Failed | Blocked | Not Run | Pass % (Executed) |
 |-------------|----------|--------|--------|---------|---------|-------------------|
-| 14          | 11       | 9      | 2      | 0       | 3       | 81.8%             |
+| **15**      | **14**   | **11** | **3**  | 0       | 1       | **78.6 %** |
 
-**Executed Through:** TC-011  
-**Fails:** TC-010 (Performance – IMG-PERF-001), TC-011 (Accessibility – ACC-FOCUS-001)  
-**Not Run:** TC-012, TC-013, TC-014  
-> Pass % = Passed ÷ (Passed + Failed) = 9 ÷ 11 ≈ 81.8%
+**Executed Through:** TC‑014  
+**Fails:** TC‑010 (IMG‑PERF‑001), TC‑011 (ACC‑FOCUS‑001), TC‑014 (PERF‑LH‑BASE‑001)  
+> Pass % = Passed ÷ Executed = 11 ÷ 14 ≈ 78.6 %
+
 
 
 ## Detailed Results
 
-| TC ID  | Title                                   | Priority | Result | Defect ID        | Notes |
-|--------|-----------------------------------------|----------|--------|------------------|-------|
+| TC ID  |Result| Defect ID        | Notes |
+| TC‑010 | FAIL | [IMG‑PERF‑001](../../issues/11) |  |
+| TC‑011 | FAIL | [ACC‑FOCUS‑001](../../issues/12) |  |
+| TC‑014 | FAIL | [PERF‑LH‑BASE‑001](../../issues/13) | Inventory score 73 |
+
 | TC-001 | Valid Login (standard_user)             | High     | PASS   |                  |       |
 | TC-002 | Locked-Out User Blocked on Login        | High     | PASS   |                  |       |
 | TC-003 | Add Single Item to Cart                 | High     | PASS   |                  |       |
@@ -45,9 +48,10 @@
 | TC-009 | Session Cleared on Cookie Delete        | Low      | PASS   |                  |       |
 | TC-010 | Inventory Images Load (Fast 3G)         | Low      | FAIL   | IMG-PERF-001     | Max image finish 15,293 ms > 10,000 ms threshold |
 | TC-011 | Keyboard Tab Navigation Accessible      | Low      | FAIL   | ACC-FOCUS-001    | Missing visible focus indicator footer links |
-| TC-012 | Error Banner Can Be Dismissed           | Low      | N/R    |                  | Planned; not executed this cycle |
-| TC-013 | Mobile Add-to-Cart Smoke (Galaxy S22) * | Medium?  | N/R    |                  | Placeholder definition; not executed |
-| TC-014 | Lighthouse Performance Baseline *       | Low      | N/R    |                  | Planned automated perf baseline |
+| TC-012 | Error Banner Can Be Dismissed           | Low      | PASS   |                  | Banner closed; icons cleared |
+| TC-013 | Mobile Add-to-Cart Smoke (Galaxy S22)   | Medium?  | PASS   |                  | Scroll down bit laggy |
+| TC-014 | Lighthouse Performance Baseline         | Low      | FAIL   |                  | Planned automated perf baseline |
+| TC-015 | Automation Smoke Script (pytest) | Low | N/R | | Framework task |
 
 
 
@@ -325,5 +329,36 @@
 
 \*\*Expected:\*\* Performance score ≥ 90 (record actual); attach JSON/HTML report.
 
-manual-evidence\screenshots\TC-010_console-timing_FAIL_20250718-1645.png
+### TC-014 – Lighthouse Performance Baseline
+
+**Executed:** 2025‑07‑20 21:04 EDT  
+| Page | Score | LCP | TBT | Result |
+|------|-------|-----|-----|--------|
+| Login | 97 | 0.9 s | 90 ms | PASS |
+| Inventory | 73 | 1.1 s | **470 ms** | FAIL |
+
+**Result:** **FAIL**  
+**Defect ID:** PERF-LH-BASE-001  
+**Evidence:** see screenshots & JSON in `manual-evidence`  
+**Notes:** High Total Blocking Time (470 ms) pulled score below 80. Likely heavy JS bundle or long main‑thread tasks.
+
+---
+
+### TC-015 – Automation Smoke Script (pytest)
+
+**Objective:** Verify the Selenium + pytest scaffold can log in, add an item, and assert cart count via command line (`pytest -m smoke`).
+
+**Preconditions:** Framework installed (pytest, selenium, driver‑manager); ENV VAR `URL=https://www.saucedemo.com/`.
+
+**Steps (automated):**
+1. `pytest tests/test_smoke.py`
+2. Script logs in (standard_user), adds Backpack to cart, asserts cart badge = 1.
+3. Quits driver.
+
+**Expected:** Exit code 0 (all assertions pass) within 30 s.
+
+**Result:** NOT EXECUTED  
+**Evidence:** _N/A_ – scaffold not yet implemented.
+
+**Notes:** Planned for Phase 5 automation; will convert to CI job.
 
