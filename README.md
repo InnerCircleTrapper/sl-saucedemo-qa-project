@@ -19,18 +19,19 @@ Manual + (planned) automation test assets for the \[Sauce Demo](https://www.sauc
 
 ## Test Scope & Coverage Snapshot
 
-| Area | Included | Notes |
-|------|----------|-------|
-| Functional (Desktop) | ✅ | Login, inventory listing, cart add/remove, checkout steps, sorting, logout, session clearing |
-| Performance | ✅ (executed) | **TC-010 FAIL** – max image finish 15,293 ms (>10,000 ms threshold) (IMG-PERF-001) |
-| Accessibility (Keyboard) | ✅ (executed) | **TC-011 FAIL** – missing visible focus indicator (ACC-FOCUS-001) |
-| Mobile (Smoke) | ✅ (executed) | Add-to-cart flow defined – **TC-012 PASS** |
-| Negative / Validation | 🟡 | Basic invalid creds & form field cases; more planned |
-| Automation (pytest scaffold) | 🟡 (planned) | TC‑015 defined – framework not yet executed |
+| Area                         | Included | Notes |
+|------------------------------|----------|-------|
+| Functional (Desktop)         | ✅ | Login, inventory listing, cart add/remove, checkout steps, sorting, logout, session clearing |
+| Performance                  | ✅ (executed) | **TC‑010 FAIL** – max image finish 15 293 ms (> 10 000 ms) (IMG‑PERF‑001)<br>**TC‑014 FAIL** – Lighthouse score 73 (PERF‑LH‑BASE‑001) |
+| Accessibility (Keyboard)     | ✅ (executed) | **TC‑011 FAIL** – missing visible focus indicator (ACC‑FOCUS‑001) |
+| Mobile (Smoke)               | ✅ (executed) | Add‑to‑cart flow – **TC‑012 PASS** |
+| Negative / Validation        | 🟡 (planned) | Invalid creds & form‑field cases still to be covered |
+| Automation (pytest scaffold) | 🟡 (planned) | TC‑015 defined – framework not yet executed |
+| Security / API              | ❌ | Out of scope for this portfolio |
+| Visual Regression            | ❌ | Not implemented yet |
 
-| Performance Optimization | 🟡 | Remediation tasks pending (IMG-PERF-001) |
-| Security / API | ❌ | Out of scope for this portfolio |
-| Visual Regression | ❌ | Not implemented yet |
+> _Legend:_ ✅ Implemented • 🟡 Partial / In Progress • ❌ Not in current scope
+
 
 ### Current Metrics
 
