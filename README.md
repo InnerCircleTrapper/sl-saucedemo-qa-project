@@ -43,6 +43,11 @@ Manual + (planned) automation test assets for the \[Sauce Demo](https://www.sauc
 - **Pass %:** 78.6 %
 - **Open Defects:** IMG-PERF-001, ACC-FOCUS-001, PERF-LH-BASE-001
 
+### Open Defects
+- [IMG‑PERF‑001](issues/11) – Product images slow (>10 s) (TC‑010)
+- [ACC‑FOCUS‑001](issues/12) – Focus indicator missing (TC‑011)
+- [PERF‑LH‑BASE‑001](issues/13) – Lighthouse score 73 (TC‑014)
+
 
 > _Legend:_ ✅ Implemented • 🟡 Partial / In Progress • ❌ Not in current scope
 
