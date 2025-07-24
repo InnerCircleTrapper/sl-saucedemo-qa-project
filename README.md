@@ -26,7 +26,7 @@ Manual + (planned) automation test assets for the \[Sauce Demo](https://www.sauc
 | Accessibility (Keyboard)     | ✅ (executed) | **TC‑011 FAIL** – missing visible focus indicator (ACC‑FOCUS‑001) |
 | Mobile (Smoke)               | ✅ (executed) | Add‑to‑cart flow – **TC‑012 PASS** |
 | Negative / Validation        | 🟡 (planned) | Invalid creds & form‑field cases still to be covered |
-| Automation (pytest scaffold) | 🟡 (planned) | TC‑015 defined – framework not yet executed |
+| Automation (pytest scaffold) | ✅ (executed) | TC‑015 PASS – smoke test running with Selenium + pytest |
 | Security / API              | ❌ | Out of scope for this portfolio |
 | Visual Regression            | ❌ | Not implemented yet |
 
@@ -38,6 +38,8 @@ This repo includes a minimal Selenium + pytest smoke test:
 
 **What it does:**  
 Logs in to https://www.saucedemo.com, adds the Backpack item, asserts the cart badge = 1.
+
+**Status:** TC‑015 last run – **PASS** (4.7–6.3s on local Chrome, 2025‑07‑24).
 
 ### Run locally
 
@@ -68,9 +70,6 @@ pytest -m smoke -v
 - [ACC‑FOCUS‑001](../../issues/12) – Focus indicator missing (TC‑011)
 - [PERF‑LH‑BASE‑001](../../issues/13) – Lighthouse score 73 (TC‑014)
 
-
-
-> _Legend:_ ✅ Implemented • 🟡 Partial / In Progress • ❌ Not in current scope
 
 ## Repository Structure
 
