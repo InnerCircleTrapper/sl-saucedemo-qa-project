@@ -22,11 +22,11 @@
 
 | Total Cases | Executed | Passed | Failed | Blocked | Not Run | Pass % (Executed) |
 |-------------|----------|--------|--------|---------|---------|-------------------|
-| **15**      | **14**   | **11** | **3**  | 0       | 1       | **78.6 %** |
+| **15**      | **15**   | **12** | **3**  | 0       | 0       | **80 %** |
 
 **Executed Through:** TC‑014  
 **Fails:** TC‑010 (IMG‑PERF‑001), TC‑011 (ACC‑FOCUS‑001), TC‑014 (PERF‑LH‑BASE‑001)  
-> Pass % = Passed ÷ Executed = 11 ÷ 14 ≈ 78.6 %
+> Pass % = Passed ÷ Executed = 12 ÷ 15 ≈ 80%
 
 
 
@@ -52,7 +52,7 @@
 | TC-012 | Error Banner Can Be Dismissed           | Low      | PASS   |                  | Banner closed; icons cleared |
 | TC-013 | Mobile Add-to-Cart Smoke (Galaxy S22)   | Medium?  | PASS   |                  | Scroll down bit laggy |
 | TC-014 | Lighthouse Performance Baseline         | Low      | FAIL   |                  [PERF‑LH‑BASE‑001](../issues/13)| Planned automated perf baseline |
-| TC-015 | Automation Smoke Script (pytest) | Low | N/R | | Framework task |
+| TC-015 | Automation Smoke Script (pytest) | Low | PASS | | Framework task |
 
 
 
@@ -345,21 +345,27 @@
 
 ---
 
-### TC-015 – Automation Smoke Script (pytest)
+#### TC-015 – Automation Smoke Script (pytest)
 
 **Objective:** Verify the Selenium + pytest scaffold can log in, add an item, and assert cart count via command line (`pytest -m smoke`).
 
-**Preconditions:** Framework installed (pytest, selenium, driver‑manager); ENV VAR `URL=https://www.saucedemo.com/`.
+**Preconditions:** Framework installed (pytest, selenium, webdriver-manager); ENV vars set (`URL=https://www.saucedemo.com/`, `USER=standard_user`, `PASS=secret_sauce`).
 
 **Steps (automated):**
-1. `pytest tests/test_smoke.py`
-2. Script logs in (standard_user), adds Backpack to cart, asserts cart badge = 1.
-3. Quits driver.
+1. Run `pytest -m smoke -v` (or `pytest tests/test_smoke.py`).
+2. Script logs in, adds *Sauce Labs Backpack* to cart, asserts cart badge = 1.
+3. Driver quits.
 
 **Expected:** Exit code 0 (all assertions pass) within 30 s.
 
-**Result:** NOT EXECUTED  
-**Evidence:** _N/A_ – scaffold not yet implemented.
+**Result:** **PASSED** (Local Windows 11 run)  
+**Duration:** 6.28 s (first run), 4.77 s (second run)  
+**Date/Build:** 2025‑07‑24, commit `<hash>`  
+**Evidence:** Pytest output screenshot(s) in `reports/screenshots/` or console log attached; optional HTML report `reports/smoke_report.html`.
 
-**Notes:** Planned for Phase 5 automation; will convert to CI job.
+**Notes:**  
+- Headless mode still commented; enable for CI.  
+- Next: add screenshot-on-fail hook & integrate into GitHub Actions pipeline.  
+- Candidate for nightly smoke job.
+
 
