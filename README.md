@@ -32,15 +32,35 @@ Manual + (planned) automation test assets for the \[Sauce Demo](https://www.sauc
 
 > _Legend:_ ✅ Implemented • 🟡 Partial / In Progress • ❌ Not in current scope
 
+## Smoke Test (TC-015)
+
+This repo includes a minimal Selenium + pytest smoke test:
+
+**What it does:**  
+Logs in to https://www.saucedemo.com, adds the Backpack item, asserts the cart badge = 1.
+
+### Run locally
+
+```bash
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r requirements.txt
+
+# (Optional) create/update .env
+# URL=https://www.saucedemo.com/
+# USER=standard_user
+# PASS=secret_sauce
+
+pytest -m smoke -v
 
 ### Current Metrics
 
 - **Total Test Cases Defined:** 15  
-- **Executed This Cycle:** 14  
-- **Pass:** 11  
+- **Executed This Cycle:** 15  
+- **Pass:** 12  
 - **Fail:** 3 (Performance – TC‑010, Accessibility – TC‑011, Performance – TC‑014)  
-- **Not Yet Executed:** 1  
-- **Pass %:** 78.6 %
+- **Not Yet Executed:** 0  
+- **Pass %:** 80 %
 - **Open Defects:** IMG-PERF-001, ACC-FOCUS-001, PERF-LH-BASE-001
 
 ### Open Defects
